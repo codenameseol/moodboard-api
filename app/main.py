@@ -14,8 +14,8 @@ from app.models import Note, NoteCreate
 from app.storage import MoodStore
 
 app = FastAPI(
-    title="moodboard-api",
-    description="오늘의 기분 한 줄을 기록하는 아주 작은 API",
+    title="Moodboard API | 오늘의 기분 노트 API",
+    description="Record one short mood note per day. | 하루 한 줄의 기분을 기록하세요.",
     version="0.1.0",
 )
 
@@ -49,7 +49,7 @@ def list_notes(
 def get_note(note_id: int, store: MoodStore = Depends(get_store)) -> dict:
     note = store.get_note(note_id)
     if note is None:
-        raise HTTPException(status_code=404, detail="note not found")
+        raise HTTPException(status_code=404, detail="Note not found. | 노트를 찾을 수 없습니다.")
     return note
 
 
@@ -57,5 +57,5 @@ def get_note(note_id: int, store: MoodStore = Depends(get_store)) -> dict:
 def delete_note(note_id: int, store: MoodStore = Depends(get_store)) -> Response:
     deleted = store.delete_note(note_id)
     if not deleted:
-        raise HTTPException(status_code=404, detail="note not found")
+        raise HTTPException(status_code=404, detail="Note not found. | 노트를 찾을 수 없습니다.")
     return Response(status_code=204)

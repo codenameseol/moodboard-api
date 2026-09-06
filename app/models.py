@@ -12,8 +12,8 @@ from pydantic import BaseModel, Field
 class NoteCreate(BaseModel):
     """Payload for POST /notes."""
 
-    text: str = Field(..., min_length=1, max_length=280, description="오늘의 한 줄")
-    mood: str = Field(..., min_length=1, max_length=32, description="자유 형식 기분 태그, 예: calm, excited")
+    text: str = Field(..., min_length=1, max_length=280, description="One-line mood note, up to 280 characters. | 오늘의 기분 한 줄, 최대 280자.")
+    mood: str = Field(..., min_length=1, max_length=32, description="Free-form mood tag, e.g. calm or excited. | 자유 형식 기분 태그, 예: calm, excited.")
 
 
 class Note(BaseModel):
