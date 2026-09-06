@@ -1,11 +1,5 @@
 # moodboard-api
 
-<details open><summary>언어 전환 · Language switch</summary>
-
-한국어를 먼저 쓰고 영어를 바로 병기합니다. GitHub Markdown은 script/canvas를 실행하지 않으므로 native disclosure를 사용합니다. / Korean comes first with English immediately paired. GitHub Markdown cannot execute script/canvas, so this native disclosure is the supported switch.
-
-</details>
-
 ## 오늘의 기분 한 줄 · One line for today's mood
 
 텍스트 하나와 mood tag 하나를 SQLite에 저장하고 꺼내는 작은 FastAPI 연습입니다.
